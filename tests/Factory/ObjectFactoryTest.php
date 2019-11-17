@@ -215,6 +215,7 @@ class ObjectFactoryTest extends TestCase
             VariadicTestClass::class,
             [
                 'foo' => ['foo', 'bar', 'baz'],
+                'bar' => 'baz',
             ]
         );
 
@@ -246,6 +247,7 @@ class ObjectFactoryTest extends TestCase
             VariadicTestClass::class,
             [
                 'foo' => ['foo', 1, 'baz'],
+                'bar' => 'baz',
             ]
         );
     }

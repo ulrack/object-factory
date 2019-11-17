@@ -69,8 +69,8 @@ class ClassAnalyser implements ClassAnalyserInterface
                 foreach ($constructor->getParameters() as $parameter) {
                     $type = $parameter->getType();
                     $parameters[$parameter->getName()] = [
-                        'type' => $type->__toString(),
-                        'builtin' => $type->isBuiltin(),
+                        'type' => $type !== null ? $type->getName() : 'mixed',
+                        'builtin' => $type !== null ? $type->isBuiltin(): true,
                         'allowsNull' => $parameter->allowsNull(),
                         'isOptional' => $parameter->isOptional(),
                         'isVariadic' => $parameter->isVariadic(),

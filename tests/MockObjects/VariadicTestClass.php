@@ -19,7 +19,7 @@ class VariadicTestClass
      *
      * @param string ...$foo
      */
-    public function __construct(string ...$foo)
+    public function __construct($bar, string ...$foo)
     {
         $this->foo = $foo;
     }

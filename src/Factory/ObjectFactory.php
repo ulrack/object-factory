@@ -121,9 +121,11 @@ class ObjectFactory implements ObjectFactoryInterface
         if ($parameterConfig['builtin']) {
             if (gettype(
                 $parameter
-            ) === $parameterConfig['type']) {
+            ) === $parameterConfig['type']
+            || $parameterConfig['type'] === 'mixed') {
                 return $parameter;
             }
+
             throw new InvalidParameterTypeException($parameterConfig, $parameter);
         }
         
