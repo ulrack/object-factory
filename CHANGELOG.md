@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 1.0.3 - 2020-01-12
 ### Fixed
 - Renamed file InvalidParameterTypeException so it can be autoloaded.
+- Translated internal type aliases to the same result as gettype returns.
 
 ## 1.0.2 - 2019-11-17
 ### Added

@@ -13,6 +13,17 @@ use Ulrack\ObjectFactory\Exception\NonInstantiableClassException;
 class ClassAnalyser implements ClassAnalyserInterface
 {
     /**
+     * A translation array to equalize the expected types of the gettype method.
+     *
+     * @var array
+     */
+    private $translations = [
+        'bool' => 'boolean',
+        'int' => 'integer',
+        'float' => 'double'
+    ];
+
+    /**
      * Contains the previously analysed classes.
      *
      * @var StorageInterface
@@ -69,7 +80,11 @@ class ClassAnalyser implements ClassAnalyserInterface
                 foreach ($constructor->getParameters() as $parameter) {
                     $type = $parameter->getType();
                     $parameters[$parameter->getName()] = [
-                        'type' => $type !== null ? $type->getName() : 'mixed',
+                        'type' => $type !== null ? 
+                            (array_key_exists($type->getName(), $this->translations) 
+                                ? $this->translations[$type->getName()] 
+                                : $type->getName()) 
+                            : 'mixed',
                         'builtin' => $type !== null ? $type->isBuiltin(): true,
                         'allowsNull' => $parameter->allowsNull(),
                         'isOptional' => $parameter->isOptional(),
