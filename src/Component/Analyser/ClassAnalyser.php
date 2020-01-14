@@ -20,7 +20,8 @@ class ClassAnalyser implements ClassAnalyserInterface
     private $translations = [
         'bool' => 'boolean',
         'int' => 'integer',
-        'float' => 'double'
+        'float' => 'double',
+        'callable' => 'array',
     ];
 
     /**
