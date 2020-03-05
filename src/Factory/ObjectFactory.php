@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) Jyxon, Inc. All rights reserved.
+ * Copyright (C) GrizzIT, Inc. All rights reserved.
  * See LICENSE for license details.
  */
 namespace Ulrack\ObjectFactory\Factory;
@@ -128,7 +128,7 @@ class ObjectFactory implements ObjectFactoryInterface
 
             throw new InvalidParameterTypeException($parameterConfig, $parameter);
         }
-        
+
         if (!is_a(
             $parameter,
             $parameterConfig['type']

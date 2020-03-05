@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) Jyxon, Inc. All rights reserved.
+ * Copyright (C) GrizzIT, Inc. All rights reserved.
  * See LICENSE for license details.
  */
 namespace Ulrack\ObjectFactory\Component\Analyser;
@@ -72,7 +72,7 @@ class ClassAnalyser implements ClassAnalyserInterface
     private function reflect(string $class): array
     {
         $reflection = new ReflectionClass($class);
-        
+
         if ($reflection->isInstantiable()) {
             $constructor = $reflection->getConstructor();
             $parameters = [];
@@ -81,10 +81,10 @@ class ClassAnalyser implements ClassAnalyserInterface
                 foreach ($constructor->getParameters() as $parameter) {
                     $type = $parameter->getType();
                     $parameters[$parameter->getName()] = [
-                        'type' => $type !== null ? 
-                            (array_key_exists($type->getName(), $this->translations) 
-                                ? $this->translations[$type->getName()] 
-                                : $type->getName()) 
+                        'type' => $type !== null ?
+                            (array_key_exists($type->getName(), $this->translations)
+                                ? $this->translations[$type->getName()]
+                                : $type->getName())
                             : 'mixed',
                         'builtin' => $type !== null ? $type->isBuiltin(): true,
                         'allowsNull' => $parameter->allowsNull(),

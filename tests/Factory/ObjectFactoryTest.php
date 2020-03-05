@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) Jyxon, Inc. All rights reserved.
+ * Copyright (C) GrizzIT, Inc. All rights reserved.
  * See LICENSE for license details.
  */
 namespace Ulrack\ObjectFactory\Tests\Factory;
@@ -223,7 +223,7 @@ class ObjectFactoryTest extends TestCase
             VariadicTestClass::class,
             $result
         );
-        
+
         $this->assertEquals(
             $result->getFoo(),
             ['foo', 'bar', 'baz']

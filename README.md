@@ -15,11 +15,11 @@ composer require ulrack/object-factory
 
 ## Usage
 
-The package provides a [Analyser](src/Component/Analyser/ClassAnalyser.php) 
+The package provides a [Analyser](src/Component/Analyser/ClassAnalyser.php)
 class, which retrieves an instantiation signature of a class.
 This analyser is used by the [ObjectFactory](src/Factory/ObjectFactory.php) to
 determine the order of the provided parameter from the configuration.
-The analyser expects an implementation of the StorageInterface from the 
+The analyser expects an implementation of the StorageInterface from the
 `ulrack/storage` package.
 This implementation can be used to store previous analyses and retrieve them at
 a later point (caching mechanisms e.g.).
@@ -35,7 +35,7 @@ use Ulrack\ObjectFactory\Component\Analyser\ClassAnalyser;
 $factory = new ObjectFactory(new ClassAnalyser(new ObjectStorage()))
 ```
 
-To create an object with the factory, simply pass the class and parameters to 
+To create an object with the factory, simply pass the class and parameters to
 the create method.
 
 ```php
@@ -53,7 +53,7 @@ $result = $factory->create(
 ```
 
 A key-value structure is used for the parameters provided to the ObjectFactory.
-If (in this case the ObjectStorage class) expects a `$data` parameter of the 
+If (in this case the ObjectStorage class) expects a `$data` parameter of the
 type array in the `__construct` method, then the structure of the `$parameter`
 parameter will be as follows:
 ```php
@@ -66,8 +66,8 @@ For variadic parameters, this structure is the same.
 
 ### Object nesting
 
-Some objects require other objects in their `__construct` method. With the 
-ObjectFactory it is also possible to create these object, with the correct 
+Some objects require other objects in their `__construct` method. With the
+ObjectFactory it is also possible to create these object, with the correct
 configuration.
 
 There are two ways to create the objects.
@@ -110,7 +110,7 @@ The configuration declaration could technically be infinitely deep.
 
 #### Object declaration
 
-It is also possible to re-use a previously generated or instantiation instance 
+It is also possible to re-use a previously generated or instantiation instance
 of a class. This can be done, by simply passing along the object in the parameters.
 
 ```php
@@ -143,7 +143,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) and [CODE_OF_CONDUCT](CODE_OF_CONDUCT
 
 ## MIT License
 
-Copyright (c) Jyxon
+Copyright (c) GrizzIT
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
