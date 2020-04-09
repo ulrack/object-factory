@@ -1,3 +1,5 @@
+# DEPRECATION NOTICE: this package has been moved and improved at [grizz-it/object-factory](https://github.com/grizz-it/object-factory)
+
 [![Build Status](https://travis-ci.com/ulrack/object-factory.svg?branch=master)](https://travis-ci.com/ulrack/object-factory)
 
 # Ulrack Object Factory
